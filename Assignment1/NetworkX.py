@@ -54,12 +54,17 @@ b_il = betweenness.items()
 b_il.sort(key=lambda x:x[1],reverse=True)
 print b_il
 
-
 print "Katz Centrality:"
 katz = nx.katz_centrality_numpy(G)
 k_il = katz.items()
 k_il.sort(key=lambda x:x[1],reverse=True)
 print k_il
+
+print "Closeness Centrality:"
+closeness = nx.closeness_centrality(G)
+c_il = closeness.items()
+c_il.sort(key=lambda x:x[1],reverse=True)
+print c_il
 
 print "Connected Components:"
 for component in nx.connected_component_subgraphs(G):
